@@ -8,7 +8,7 @@ public class Flipper : MonoBehaviour
 
     private HingeJoint hinge;
 
-    [SerializeField] private int mouseButton = 0;
+    [SerializeField] private KeyCode keycode;
     [SerializeField] private float restingPosition = 0;
     [SerializeField] private float targetPosition = 0;
 
@@ -29,7 +29,7 @@ public class Flipper : MonoBehaviour
 
         jointSpring.targetPosition = restingPosition;
     
-        if (Input.GetMouseButton(mouseButton)) {
+        if (Input.GetKey(keycode)) {
             jointSpring.targetPosition = targetPosition;
         }
 
